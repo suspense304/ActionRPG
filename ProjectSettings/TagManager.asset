@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - PlayerWeapon
+  - Breakable
+  - Enemy
+  - Manager
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Enemy
+  - PlayerWeapon
+  - Breakables
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 565982697
+    locked: 0
+  - name: Walls
+    uniqueID: 230188811
+    locked: 0
+  - name: Objects
+    uniqueID: 94976295
+    locked: 0
+  - name: ObjectsCloser
+    uniqueID: 1737910111
+    locked: 0
+  - name: Player
+    uniqueID: 2420248789
+    locked: 0
+  - name: SecretPaths
+    uniqueID: 2013171811
+    locked: 0
