@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿#pragma warning disable CS0649
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,13 +15,17 @@ public enum EnemyState
 }
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] EnemyHealth enemyHealth;
     [SerializeField] public int health;
+    [SerializeField] float attackDelay;
     [SerializeField] string enemyName;
-    [SerializeField] int baseAttack;
+    [SerializeField] public int baseAttack;
     [SerializeField] public float moveSpeed;
     [SerializeField] int XP;
     [SerializeField] EnemySoundManager enemySoundManager;
+    [SerializeField] MovementType movementType;
+
+    public Animator anim;
+    public Rigidbody2D rb;
 
     public PlayerStats player;
 
@@ -27,8 +33,9 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        health = enemyHealth.baseHealth;
+        anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Manager").GetComponent<PlayerStats>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void TakeDamage(int damage)
@@ -51,11 +58,12 @@ public class Enemy : MonoBehaviour
     {
         player.AddXP(XP);
         this.gameObject.SetActive(false);
-        
     }
     public void Knockback(Rigidbody2D rb, float knockbackDuration, int damage)
     {
-        StartCoroutine(KnockbackWait(rb, knockbackDuration));
+        Debug.Log("Hit!");
+        currentState = EnemyState.stagger;
+        if(rb != null) StartCoroutine(KnockbackWait(rb, knockbackDuration));
         TakeDamage(damage);
     }
 
@@ -66,6 +74,47 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(knockbackDuration);
             rb.velocity = Vector2.zero;
             currentState = EnemyState.idle;
+        }
+    }
+
+    public void ChangeAnim(Vector2 direction)
+    {
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if (direction.x > 0)
+            {
+                SetAnimationFloat(Vector2.right);
+            }
+            else if (direction.x < 0)
+            {
+                SetAnimationFloat(Vector2.left);
+            }
+        }
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        {
+            if (direction.y > 0)
+            {
+                SetAnimationFloat(Vector2.up);
+
+            }
+            else if (direction.y < 0)
+            {
+                SetAnimationFloat(Vector2.down);
+            }
+        }
+    }
+
+    void SetAnimationFloat(Vector2 setVector)
+    {
+        anim.SetFloat("moveX", setVector.x);
+        anim.SetFloat("moveY", setVector.y);
+    }
+
+    public void ChangeState(EnemyState newState)
+    {
+        if (currentState != newState)
+        {
+            currentState = newState;
         }
     }
 

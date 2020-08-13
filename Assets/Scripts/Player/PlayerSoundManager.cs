@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿#pragma warning disable CS0649
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +12,7 @@ public class PlayerSoundManager : MonoBehaviour
     [SerializeField] AudioClip playerHit;
     [SerializeField] AudioClip swordAttack;
     [SerializeField] AudioClip itemFound;
+    [SerializeField] AudioClip spinAttack;
 
     void Awake()
     {
@@ -26,6 +29,14 @@ public class PlayerSoundManager : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = swordAttack;
+        audioSource.Play();
+    }
+
+
+    public void PlaySpinAttackSound()
+    {
+        audioSource.Stop();
+        audioSource.clip = spinAttack;
         audioSource.Play();
     }
 

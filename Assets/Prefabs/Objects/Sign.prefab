@@ -149,7 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578c03e0c9e141848b14c3e272da6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
+  context: {fileID: 11400000, guid: 02fa9f8ab6da29d459f076cee77d74f9, type: 2}
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
   dialog: 
-  isInRange: 0

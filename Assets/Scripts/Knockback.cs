@@ -9,7 +9,6 @@ public class Knockback : MonoBehaviour
     public int damage;
     void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.gameObject.CompareTag("Breakable") && this.gameObject.CompareTag("PlayerWeapon"))
         {
             other.GetComponent<Breakable>().Break();
@@ -29,13 +28,14 @@ public class Knockback : MonoBehaviour
 
                 if (other.gameObject.CompareTag("Enemy") && other.isTrigger)
                 {
-                    hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
+                    damage = GameObject.FindWithTag("Manager").GetComponent<PlayerStats>().Attack;
                     other.GetComponent<Enemy>().Knockback(hit, knockbackDuration, damage);
                 }
                 if (other.gameObject.CompareTag("Player"))
                 {
                     if(other.GetComponent<PlayerMovement>().currentState != PlayerState.stagger)
                     {
+                        damage = GetComponent<Enemy>().baseAttack;
                         hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
                         other.GetComponent<PlayerMovement>().Knockback(knockbackDuration, damage);
                     }

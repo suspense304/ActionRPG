@@ -4,100 +4,112 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 4502755339524624405
-    second: CharacterSwordAttackSprite_0
+    second: Attack_Down_1
   - first:
       213: -3043387820832822461
-    second: CharacterSwordAttackSprite_1
+    second: Attack_Down_2
   - first:
       213: 1054039416601017101
-    second: CharacterSwordAttackSprite_2
+    second: Attack_Down_3
   - first:
       213: -1242736983102587279
-    second: CharacterSwordAttackSprite_3
+    second: Attack_Down_4
   - first:
       213: 1444350357817252137
-    second: CharacterSwordAttackSprite_4
+    second: Attack_Right_1
   - first:
       213: 3045624812758148704
-    second: CharacterSwordAttackSprite_5
+    second: Attack_Right_2
   - first:
       213: -1884739354861468718
-    second: CharacterSwordAttackSprite_6
+    second: Attack_Right_3
   - first:
       213: 1433535591397085660
-    second: CharacterSwordAttackSprite_7
+    second: Attack_Right_4
   - first:
       213: -6278565705528570454
-    second: CharacterSwordAttackSprite_8
+    second: Attack_Left_1
   - first:
       213: 1156258074172678828
-    second: CharacterSwordAttackSprite_9
+    second: Attack_Left_2
   - first:
       213: -6728508267968577254
-    second: CharacterSwordAttackSprite_10
+    second: Attack_Left_3
   - first:
       213: 7534326589074249278
-    second: CharacterSwordAttackSprite_11
+    second: Attack_Left_4
   - first:
       213: -3390219873256594044
-    second: CharacterSwordAttackSprite_12
+    second: Attack_Up_1
   - first:
       213: -3906033038582039230
-    second: CharacterSwordAttackSprite_13
+    second: Attack_Up_2
   - first:
       213: 5098811928935749836
-    second: CharacterSwordAttackSprite_14
+    second: Attack_Up_3
   - first:
       213: 2520717847498617954
-    second: CharacterSwordAttackSprite_15
+    second: Attack_Up_4
   - first:
       213: -835367797128066546
-    second: CharacterSwordAttackSprite_0
+    second: Attack_Down_1
   - first:
       213: -5714810207226853070
-    second: CharacterSwordAttackSprite_1
+    second: Attack_Down_2
   - first:
       213: 2329284280696121958
-    second: CharacterSwordAttackSprite_2
+    second: Attack_Down_3
   - first:
       213: 5177257708577060972
-    second: CharacterSwordAttackSprite_3
+    second: Attack_Down_4
   - first:
       213: -830475482529313152
-    second: CharacterSwordAttackSprite_4
+    second: Attack_Right_1
   - first:
       213: 3662772393748628174
-    second: CharacterSwordAttackSprite_5
+    second: Attack_Right_2
   - first:
       213: -6617509102628517883
-    second: CharacterSwordAttackSprite_6
+    second: Attack_Right_3
   - first:
       213: 6659512596222837729
-    second: CharacterSwordAttackSprite_7
+    second: Attack_Right_4
   - first:
       213: 2595214399578281568
-    second: CharacterSwordAttackSprite_8
+    second: Attack_Left_1
   - first:
       213: -2521041760049186965
-    second: CharacterSwordAttackSprite_9
+    second: Attack_Left_2
   - first:
       213: -6056625432173463465
-    second: CharacterSwordAttackSprite_10
+    second: Attack_Left_3
   - first:
       213: 2826463833486624656
-    second: CharacterSwordAttackSprite_11
+    second: Attack_Left_4
   - first:
       213: 836949320895993020
-    second: CharacterSwordAttackSprite_12
+    second: Attack_Up_1
   - first:
       213: -2565964948036821075
-    second: CharacterSwordAttackSprite_13
+    second: Attack_Up_2
   - first:
       213: -1680534798076711351
-    second: CharacterSwordAttackSprite_14
+    second: Attack_Up_3
   - first:
       213: 557754391572013264
-    second: CharacterSwordAttackSprite_15
+    second: Attack_Up_4
+  - first:
+      213: 7702343451186538681
+    second: CharacterSwordAttackSprite_16
+  - first:
+      213: -5455296687423643698
+    second: CharacterSwordAttackSprite_17
+  - first:
+      213: -4904220818480712289
+    second: CharacterSwordAttackSprite_18
+  - first:
+      213: 1516206395700344730
+    second: CharacterSwordAttackSprite_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -195,91 +207,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0a816b1a6d2864f0800000000000000
-      internalID: -835367797128066546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CharacterSwordAttackSprite_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2398777156ae0b0b0800000000000000
-      internalID: -5714810207226853070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CharacterSwordAttackSprite_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66a2bc356b7435020800000000000000
-      internalID: 2329284280696121958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CharacterSwordAttackSprite_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c687366a47059d740800000000000000
-      internalID: 5177257708577060972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CharacterSwordAttackSprite_4
+      name: Attack_Right_1
       rect:
         serializedVersion: 2
         x: 0
@@ -300,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_5
+      name: Attack_Right_2
       rect:
         serializedVersion: 2
         x: 32
@@ -321,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_6
+      name: Attack_Right_3
       rect:
         serializedVersion: 2
         x: 64
@@ -342,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_7
+      name: Attack_Right_4
       rect:
         serializedVersion: 2
         x: 96
@@ -363,7 +291,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_8
+      name: Attack_Left_1
       rect:
         serializedVersion: 2
         x: 0
@@ -384,7 +312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_9
+      name: Attack_Left_2
       rect:
         serializedVersion: 2
         x: 32
@@ -405,7 +333,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_10
+      name: Attack_Left_3
       rect:
         serializedVersion: 2
         x: 64
@@ -426,7 +354,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_11
+      name: Attack_Left_4
       rect:
         serializedVersion: 2
         x: 96
@@ -447,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_12
+      name: Attack_Up_1
       rect:
         serializedVersion: 2
         x: 0
@@ -468,7 +396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_13
+      name: Attack_Up_2
       rect:
         serializedVersion: 2
         x: 32
@@ -489,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_14
+      name: Attack_Up_3
       rect:
         serializedVersion: 2
         x: 64
@@ -510,7 +438,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CharacterSwordAttackSprite_15
+      name: Attack_Up_4
       rect:
         serializedVersion: 2
         x: 96
@@ -526,6 +454,90 @@ TextureImporter:
       bones: []
       spriteID: 0d0609df9aa8db700800000000000000
       internalID: 557754391572013264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Down_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510dbdaef100d7e30800000000000000
+      internalID: 4502755339524624405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Down_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b6289c6e6b3c5d0800000000000000
+      internalID: -3043387820832822461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Down_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b73cdc343b0ae00800000000000000
+      internalID: 1054039416601017101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Down_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17efde45c49e0cee0800000000000000
+      internalID: -1242736983102587279
       vertices: []
       indices: 
       edges: []

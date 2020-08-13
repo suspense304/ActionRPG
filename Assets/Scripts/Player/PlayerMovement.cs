@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿#pragma warning disable CS0649
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,14 +17,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float attackDelay;
+    [SerializeField] float attackMovement;
 
     bool isAttacking;
+    bool isSpinAttacking;
     public Inventory inventory;
     public PlayerState currentState;
     public PlayerStats player;
     public SignalSender playerHealthSignal;
     public SpriteRenderer newItemSprite;
     public VectorValue startingPosition;
+    public Vector2 testPosition;
 
     Animator anim;
     Rigidbody2D rb;
@@ -30,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float attackBuffer;
     float attackTimer;
+    
     
 
     void Awake()
@@ -43,7 +49,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim.SetFloat("moveX", 0);
         anim.SetFloat("moveY", -1);
-        transform.position = startingPosition.initialPosition;
+
+        if (startingPosition.initialPosition == Vector2.zero)
+        {
+            transform.position = testPosition;
+        }
+        else
+        {
+            transform.position = startingPosition.initialPosition;
+        }
         attackTimer = attackBuffer;
     }
 
@@ -55,6 +69,13 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
+
+
+        if (Input.GetButtonDown("spin") && currentState != PlayerState.attack && !isSpinAttacking)
+        {
+            isSpinAttacking = true;
+            StartCoroutine(ExecuteSpinAttack());
+        }
 
         if (Input.GetButtonDown("attack"))
         {
@@ -74,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (isAttacking && currentState != PlayerState.attack
-            && currentState != PlayerState.stagger)
+            && currentState != PlayerState.stagger && !isSpinAttacking)
         {
             StartCoroutine(ExecuteAttack());
         }
@@ -116,12 +137,27 @@ public class PlayerMovement : MonoBehaviour
         PlayerSoundManager.instance.PlayAttackSound();
         yield return null;
         anim.SetBool("isAttacking", false);
-        yield return new WaitForSeconds(attackDelay);   
-        if(currentState != PlayerState.interact)
+        yield return new WaitForSeconds(attackDelay);
+        
+        if (currentState != PlayerState.interact)
         {
             currentState = PlayerState.walk;
         }
-        
+    }
+
+    IEnumerator ExecuteSpinAttack()
+    {
+        anim.SetBool("isSpinAttacking", true);
+        currentState = PlayerState.attack;
+        PlayerSoundManager.instance.PlaySpinAttackSound();
+        yield return null;
+        anim.SetBool("isSpinAttacking", false);
+        yield return new WaitForSeconds(attackDelay);
+        isSpinAttacking = false;
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
     }
 
     void UpdateAnimationsMove()

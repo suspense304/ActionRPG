@@ -109,6 +109,69 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1799086382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1799086383}
+  - component: {fileID: 1799086384}
+  - component: {fileID: 8725203627691082973}
+  m_Layer: 0
+  m_Name: Spin
+  m_TagString: PlayerWeapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1799086383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799086382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2970371498795550370}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1799086384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799086382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26ce883f92e44e4cbbf7bbc893f56e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2.5
+  knockbackDuration: 0.3
+  damage: 1
+--- !u!58 &8725203627691082973
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799086382}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &2970371497007590982
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,15 +229,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.078406334, y: -0.7871828}
+    - - {x: 0.13592863, y: -0.8940096}
       - {x: 0.18536401, y: -0.24975014}
       - {x: 0.1621516, y: -0.2550678}
       - {x: 0.1061954, y: 0.1409636}
-      - {x: -0.2517593, y: 0.37218285}
-      - {x: -0.5435016, y: 0.46051216}
-      - {x: -0.7086966, y: 0.1987381}
-      - {x: -0.7944674, y: -0.1838942}
-      - {x: -0.40890336, y: -0.9218025}
+      - {x: -0.005331993, y: 0.86458206}
+      - {x: -0.47362995, y: 0.8077078}
+      - {x: -0.73250246, y: 0.57555676}
+      - {x: -0.9387851, y: 0.24804306}
+      - {x: -0.9505992, y: -0.16745949}
+      - {x: -0.7946081, y: -0.5780678}
+      - {x: -0.3431635, y: -0.8889332}
 --- !u!114 &2970371497007590986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,8 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26ce883f92e44e4cbbf7bbc893f56e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 7
-  knockbackDuration: 0.15
+  thrust: 2.5
+  knockbackDuration: 0.3
   damage: 1
 --- !u!1 &2970371497125567013
 GameObject:
@@ -247,12 +312,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5600445, y: -0.07528591}
-      - {x: -0.6670027, y: -0.36629963}
-      - {x: -0.26295948, y: -0.8202181}
-      - {x: 0.039415836, y: -0.8242178}
-      - {x: 0.18455362, y: -0.7978163}
-      - {x: 0.22705865, y: -0.5795679}
+    - - {x: -0.37926054, y: 0.015106201}
+      - {x: -0.8724389, y: 0.0034856796}
+      - {x: -0.87732744, y: -0.2862234}
+      - {x: -0.6798043, y: -0.6229477}
+      - {x: -0.238307, y: -0.8941755}
+      - {x: 0.14624262, y: -0.90639305}
+      - {x: 0.37355494, y: -0.84712124}
+      - {x: 0.40882683, y: -0.84674263}
+      - {x: 0.6134851, y: -0.7498398}
+      - {x: 0.84645486, y: -0.46469784}
+      - {x: 0.83515024, y: -0.2426529}
       - {x: 0.25682473, y: -0.28654385}
       - {x: -0.27435112, y: -0.24308968}
 --- !u!114 &2970371497125567014
@@ -267,8 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26ce883f92e44e4cbbf7bbc893f56e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 7
-  knockbackDuration: 0.15
+  thrust: 2.5
+  knockbackDuration: 0.3
   damage: 1
 --- !u!1 &2970371497251925949
 GameObject:
@@ -432,8 +502,8 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &2970371497761874268
 BoxCollider2D:
@@ -501,14 +571,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5.25
   attackDelay: 0.35
-  soundManager: {fileID: 0}
+  attackMovement: 2.75
   inventory: {fileID: 11400000, guid: 6bc2f095b6ff7614b91140be5f92f53a, type: 2}
   currentState: 3
   player: {fileID: 0}
   playerHealthSignal: {fileID: 11400000, guid: e19ca8e52d76526429666ac0f806a305, type: 2}
   newItemSprite: {fileID: 1415893941}
   startingPosition: {fileID: 11400000, guid: e4a09d29a1ef05040ac0f663915ed65f, type: 2}
-  attackBuffer: 0.35
+  testPosition: {x: -37, y: -49}
+  attackBuffer: 0.18
 --- !u!82 &1103031569
 AudioSource:
   m_ObjectHideFlags: 0
@@ -718,14 +789,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.123209715, y: 0.87679005}
-      - {x: -0.15176153, y: 0.7873926}
-      - {x: -0.16215158, y: 0.25506783}
-      - {x: -0.10619545, y: -0.14096355}
-      - {x: 0.19575453, y: -0.41698647}
-      - {x: 0.64149153, y: -0.33314896}
-      - {x: 0.22322202, y: 0.97915745}
-      - {x: 0.061675787, y: 1.089817}
+    - - {x: -0.16429663, y: 0.93431187}
+      - {x: -0.5182247, y: 0.7835674}
+      - {x: -0.72698355, y: 0.58195686}
+      - {x: -0.93452597, y: 0.3024845}
+      - {x: -0.9510274, y: 0.008544922}
+      - {x: 0.08280611, y: -0.009485245}
+      - {x: 0.17110252, y: 0.0021038055}
+      - {x: 0.96197224, y: -0.020885468}
+      - {x: 0.9560127, y: 0.2842636}
+      - {x: 0.7956717, y: 0.5083866}
+      - {x: 0.59498644, y: 0.76711655}
+      - {x: 0.32183123, y: 0.9052}
+      - {x: 0.06989336, y: 0.9254675}
 --- !u!114 &2970371498024628050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,8 +814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26ce883f92e44e4cbbf7bbc893f56e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 7
-  knockbackDuration: 0.15
+  thrust: 2.5
+  knockbackDuration: 0.3
   damage: 1
 --- !u!1 &2970371498218241406
 GameObject:
@@ -798,15 +874,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.16801333, y: 0.47355843}
+    - - {x: 0.32651472, y: 0.88540554}
+      - {x: 0.0118813515, y: 0.8844309}
       - {x: -0.11815882, y: 0.24975014}
       - {x: -0.16215158, y: 0.25506783}
       - {x: -0.10619545, y: -0.14096355}
-      - {x: -0.061865807, y: -0.9098253}
-      - {x: 0.6331086, y: -0.63972664}
-      - {x: 0.8207054, y: -0.23234081}
-      - {x: 0.79446745, y: 0.18389416}
-      - {x: 0.56571615, y: 0.5297718}
+      - {x: -0.18512774, y: -0.9098253}
+      - {x: 0.38171506, y: -0.87331295}
+      - {x: 0.6577611, y: -0.672596}
+      - {x: 0.7912507, y: -0.49805832}
+      - {x: 0.8946624, y: -0.28164577}
+      - {x: 0.9834688, y: 0.019546509}
+      - {x: 0.9555526, y: 0.2054367}
+      - {x: 0.86630464, y: 0.4422474}
+      - {x: 0.53284645, y: 0.76807785}
 --- !u!114 &2970371498218241346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,8 +900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26ce883f92e44e4cbbf7bbc893f56e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 7
-  knockbackDuration: 0.15
+  thrust: 2.5
+  knockbackDuration: 0.3
   damage: 1
 --- !u!1 &2970371498795550371
 GameObject:
@@ -853,6 +934,7 @@ Transform:
   - {fileID: 2970371498024628049}
   - {fileID: 2970371498218241345}
   - {fileID: 2970371497007590985}
+  - {fileID: 1799086383}
   m_Father: {fileID: 2970371497251925948}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
