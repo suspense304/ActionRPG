@@ -6,17 +6,24 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] int currentHealth;
-    [SerializeField] int maxHealth;
+    [Header("Current Values")]
     [SerializeField] int attack;
+    [SerializeField] int currentMana;
+    [SerializeField] int currentHealth;
     [SerializeField] int level;
-    [SerializeField] float healthModifier;
+    [SerializeField] int maxMana;
+    [SerializeField] int maxHealth;
     [SerializeField] int xp;
     [SerializeField] int xpToNextLevel;
+
+    [Header("Modifiers")]
+    [SerializeField] float healthModifier;
     [SerializeField] float xpModifier;
 
-    public GameObject player;
-    public UIHealthController UI;
+    [Header("References")]
+    [SerializeField] public GameObject player;
+    [SerializeField] public SignalSender playerHealthSignal;
+    [SerializeField] public SignalSender playerManaSignal;
 
     private int baseXp = 40;
 
@@ -26,11 +33,24 @@ public class PlayerStats : MonoBehaviour
     public int XP { get => xp; }
     public int XPtoNextLevel1 { get => xpToNextLevel; }
     public int CurrentHealth { get => currentHealth; }
-    public SignalSender playerHealthSignal;
+    public int CurrentMana { get => currentMana; }
+    public int MaxMana { get => maxMana; }
 
-    void Awake()
+    
+
+    void Start()
     {
-        if(UI != null) UI.UpdateHealth();
+        if (playerHealthSignal != null)
+        {
+            playerHealthSignal.Raise();
+        }
+
+        if (playerManaSignal != null)
+        {
+            playerManaSignal.Raise();
+        }
+        
+        
     }
 
     public void SetMaxHealth(int newHealth)
@@ -43,6 +63,12 @@ public class PlayerStats : MonoBehaviour
         attack = newAttack;
     }
 
+    public void UseAbilityPower(int abilityPoints)
+    {
+        currentMana -= abilityPoints;
+        playerManaSignal.Raise();
+    }
+
     public void SetNextLevelXP()
     {
         xpToNextLevel = Mathf.CeilToInt(baseXp * level * xpModifier);
@@ -53,6 +79,7 @@ public class PlayerStats : MonoBehaviour
         level++;
         SetMaxHealth(maxHealth + (Mathf.CeilToInt(Level * healthModifier)));
         currentHealth = maxHealth;
+        currentMana = maxMana;
         SetAttack(attack + 1);
         SetNextLevelXP();
         xp = 0;
@@ -67,7 +94,7 @@ public class PlayerStats : MonoBehaviour
 
     public void CheckNewLevel()
     {
-        if(xp >= xpToNextLevel)
+        if (xp >= xpToNextLevel)
         {
             IncrementLevel();
         }
@@ -79,7 +106,6 @@ public class PlayerStats : MonoBehaviour
         PlayerSoundManager.instance.PlayHitSound();
         playerHealthSignal.Raise();
         CheckForDeath();
-        
     }
 
     public void CheckForDeath()

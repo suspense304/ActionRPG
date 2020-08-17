@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public int baseAttack;
     [SerializeField] public float moveSpeed;
     [SerializeField] int XP;
+    [SerializeField] GameObject deathEffect;
     [SerializeField] EnemySoundManager enemySoundManager;
     [SerializeField] MovementType movementType;
 
@@ -57,11 +58,20 @@ public class Enemy : MonoBehaviour
     public void EnemyDead()
     {
         player.AddXP(XP);
+        DeathEffect();
         this.gameObject.SetActive(false);
+    }
+
+    void DeathEffect()
+    {
+        if(deathEffect != null)
+        {
+            GameObject go = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(go, 1f);
+        }
     }
     public void Knockback(Rigidbody2D rb, float knockbackDuration, int damage)
     {
-        Debug.Log("Hit!");
         currentState = EnemyState.stagger;
         if(rb != null) StartCoroutine(KnockbackWait(rb, knockbackDuration));
         TakeDamage(damage);

@@ -121,12 +121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e5efe909eef7444821a6c18fb73a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 3
   attackDelay: 0.75
   enemyName: Cave Bat
-  baseAttack: 3
+  baseAttack: 1
   moveSpeed: 3.2
-  XP: 3
+  XP: 2
+  deathEffect: {fileID: 7926196376186563286, guid: 8b0344b2e0d65e941bc34f9e877f2e40,
+    type: 3}
   enemySoundManager: {fileID: 488085475789169341}
   movementType: {fileID: -4556057172039368999}
   anim: {fileID: 7158919915307806297}

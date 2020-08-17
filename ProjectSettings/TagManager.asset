@@ -20,7 +20,7 @@ TagManager:
   - Enemy
   - PlayerWeapon
   - Breakables
-  - 
+  - Shader
   - 
   - 
   - 
@@ -62,4 +62,7 @@ TagManager:
     locked: 0
   - name: SecretPaths
     uniqueID: 2013171811
+    locked: 0
+  - name: Shader
+    uniqueID: 3523145795
     locked: 0

@@ -45,17 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f2e6a1ab2f469429c1bb459f25d5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 20
-  maxHealth: 20
   attack: 1
+  currentMana: 20
+  currentHealth: 10
   level: 1
-  healthModifier: 1.02
+  maxMana: 20
+  maxHealth: 10
   xp: 0
-  xpToNextLevel: 20
+  xpToNextLevel: 12
+  healthModifier: 1.02
   xpModifier: 1.06
-  player: {fileID: 0}
-  UI: {fileID: 0}
-  playerHealthSignal: {fileID: 11400000, guid: e19ca8e52d76526429666ac0f806a305, type: 2}
+  player: {fileID: 2970371497761874265, guid: 10fe2e4cbfbd1d546aa2017f398af802, type: 3}
+  playerHealthSignal: {fileID: 11400000, guid: f109d2d13440ef5448b524a62ed008b9, type: 2}
+  playerManaSignal: {fileID: 11400000, guid: f52556d8fd488c84a9e70b8544d3e15e, type: 2}
 --- !u!114 &5448063147193920892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3ce054a4d52104aada547a15dbb118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 5448063147193920883}
   themeSource: {fileID: 0}
   playerHit: {fileID: 8300000, guid: 1ca116dce53d18a40b97fb6f81a459f5, type: 3}
   swordAttack: {fileID: 8300000, guid: b8fdbc0809e588c4fa38c0ed869164e2, type: 3}

@@ -15,27 +15,36 @@ public enum PlayerState
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("State Machine")]
+    [SerializeField] public PlayerState currentState;
+
+    [Header("Movement")]
     [SerializeField] float speed;
+
+    [Header("Attack Variables")]
+    [SerializeField] public float attackBuffer;
     [SerializeField] float attackDelay;
     [SerializeField] float attackMovement;
+    [SerializeField] float comboWindow;
+    [SerializeField] int specialCost;
 
-    bool isAttacking;
-    bool isSpinAttacking;
-    public Inventory inventory;
-    public PlayerState currentState;
-    public PlayerStats player;
-    public SignalSender playerHealthSignal;
-    public SpriteRenderer newItemSprite;
-    public VectorValue startingPosition;
-    public Vector2 testPosition;
+    [Header("Booleans")]
+    [SerializeField] bool isAttacking;
+
+    [Header("References")]
+    [SerializeField] public Inventory inventory;
+    [SerializeField] public PlayerStats player;
+    [SerializeField] public SignalSender playerHealthSignal;
+    [SerializeField] public SpriteRenderer newItemSprite;
+    [SerializeField] public VectorValue startingPosition;
+    [SerializeField] public Vector2 testPosition;
 
     Animator anim;
     Rigidbody2D rb;
     Vector3 change;
-
-    public float attackBuffer;
     float attackTimer;
-    
+    float comboTimer;
+    int attackCount = 0;
     
 
     void Awake()
@@ -71,9 +80,8 @@ public class PlayerMovement : MonoBehaviour
         change.y = Input.GetAxisRaw("Vertical");
 
 
-        if (Input.GetButtonDown("spin") && currentState != PlayerState.attack && !isSpinAttacking)
+        if (Input.GetButtonDown("spin") && currentState != PlayerState.attack)
         {
-            isSpinAttacking = true;
             StartCoroutine(ExecuteSpinAttack());
         }
 
@@ -94,8 +102,18 @@ public class PlayerMovement : MonoBehaviour
             attackTimer = 0;
         }
 
+        if(comboTimer > 0)
+        {
+            comboTimer -= Time.deltaTime;
+        }
+
+        if (comboTimer <= 0)
+        {
+            attackCount = 0;
+        }
+
         if (isAttacking && currentState != PlayerState.attack
-            && currentState != PlayerState.stagger && !isSpinAttacking)
+            && currentState != PlayerState.stagger)
         {
             StartCoroutine(ExecuteAttack());
         }
@@ -132,32 +150,56 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator ExecuteAttack()
     {
-        anim.SetBool("isAttacking", true);
-        currentState = PlayerState.attack;
-        PlayerSoundManager.instance.PlayAttackSound();
-        yield return null;
-        anim.SetBool("isAttacking", false);
-        yield return new WaitForSeconds(attackDelay);
-        
-        if (currentState != PlayerState.interact)
+        if (attackCount == 0)
         {
-            currentState = PlayerState.walk;
+            anim.SetTrigger("Attack1");
+            currentState = PlayerState.attack;
+            PlayerSoundManager.instance.PlayAttackSound();
+            yield return new WaitForSeconds(attackDelay);
+
+            if (currentState != PlayerState.interact)
+            {
+                currentState = PlayerState.walk;
+            }
+            attackCount++;
+            comboTimer = comboWindow;
         }
+        else if (comboWindow > 0 && attackCount == 1)
+        {
+            anim.SetTrigger("Attack2");
+            currentState = PlayerState.attack;
+            PlayerSoundManager.instance.PlayAttackSound();
+            yield return new WaitForSeconds(attackDelay);
+
+            if (currentState != PlayerState.interact)
+            {
+                currentState = PlayerState.walk;
+            }
+            attackCount = 0;
+        }
+        
     }
 
     IEnumerator ExecuteSpinAttack()
     {
-        anim.SetBool("isSpinAttacking", true);
-        currentState = PlayerState.attack;
-        PlayerSoundManager.instance.PlaySpinAttackSound();
-        yield return null;
-        anim.SetBool("isSpinAttacking", false);
-        yield return new WaitForSeconds(attackDelay);
-        isSpinAttacking = false;
-        if (currentState != PlayerState.interact)
+        if(player.CurrentMana >= specialCost)
         {
-            currentState = PlayerState.walk;
+            player.UseAbilityPower(specialCost);
+            anim.SetTrigger("SpinAttack");
+            currentState = PlayerState.attack;
+            PlayerSoundManager.instance.PlaySpinAttackSound();
+
+            yield return new WaitForSeconds(attackDelay);
+            if (currentState != PlayerState.interact)
+            {
+                currentState = PlayerState.walk;
+            }
+        } else
+        {
+            Debug.Log("NO MANA");
         }
+
+        
     }
 
     void UpdateAnimationsMove()

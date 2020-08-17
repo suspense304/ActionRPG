@@ -168,12 +168,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b26bb4bb8288347aac068aa18ef7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 3
   attackDelay: 1
   enemyName: Goblin
-  baseAttack: 5
+  baseAttack: 2
   moveSpeed: 2.25
-  XP: 5
+  XP: 2
+  deathEffect: {fileID: 7926196376186563286, guid: 8b0344b2e0d65e941bc34f9e877f2e40,
+    type: 3}
   enemySoundManager: {fileID: 2123791207378590055}
   movementType: {fileID: -3061859977361768552}
   anim: {fileID: 7947633495421073457}

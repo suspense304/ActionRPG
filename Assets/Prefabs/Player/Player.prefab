@@ -387,9 +387,8 @@ GameObject:
   - component: {fileID: 2970371497761874270}
   - component: {fileID: 2970371497761874269}
   - component: {fileID: 1103031569}
-  - component: {fileID: 1103031562}
-  - component: {fileID: 7499733717034565105}
   - component: {fileID: 1103031563}
+  - component: {fileID: 186585420}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -569,17 +568,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06af076ed6d1c37488470d0bb1890de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5.25
-  attackDelay: 0.35
-  attackMovement: 2.75
-  inventory: {fileID: 11400000, guid: 6bc2f095b6ff7614b91140be5f92f53a, type: 2}
   currentState: 3
+  speed: 5.25
+  attackBuffer: 0.18
+  attackDelay: 0.3
+  attackMovement: 2.75
+  comboWindow: 0.75
+  specialCost: 5
+  isAttacking: 0
+  inventory: {fileID: 11400000, guid: 6bc2f095b6ff7614b91140be5f92f53a, type: 2}
   player: {fileID: 0}
-  playerHealthSignal: {fileID: 11400000, guid: e19ca8e52d76526429666ac0f806a305, type: 2}
+  playerHealthSignal: {fileID: 11400000, guid: f109d2d13440ef5448b524a62ed008b9, type: 2}
   newItemSprite: {fileID: 1415893941}
   startingPosition: {fileID: 11400000, guid: e4a09d29a1ef05040ac0f663915ed65f, type: 2}
-  testPosition: {x: -37, y: -49}
-  attackBuffer: 0.18
+  testPosition: {x: 0, y: 0}
 --- !u!82 &1103031569
 AudioSource:
   m_ObjectHideFlags: 0
@@ -676,7 +678,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1103031562
+--- !u!114 &1103031563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -685,14 +687,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2970371497761874265}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58b9170aca9d9244a7d3dd70153b2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: cd2714fe292a0e64499c074a94b9a2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: e19ca8e52d76526429666ac0f806a305, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7499733717034565105
+  contextClue: {fileID: 605568331977989947}
+--- !u!114 &186585420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -719,19 +718,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1103031563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970371497761874265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd2714fe292a0e64499c074a94b9a2e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contextClue: {fileID: 605568331977989947}
 --- !u!1 &2970371498024628046
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Towns/PlayerHouse.unity
+    path: Assets/Scenes/Towns/Meadowvale/Houses/PlayerHouse.unity
     guid: d26042effb5a1624985c2349351b0b22
   - enabled: 1
-    path: Assets/Scenes/Towns/Meadowvale.unity
+    path: Assets/Scenes/Towns/Meadowvale/Meadowvale.unity
     guid: 24d16d4e651851f49a4c2959ce3eab6d
   - enabled: 1
-    path: Assets/Scenes/Towns/Cave/Hidden Cave.unity
+    path: Assets/Scenes/Towns/Meadowvale/Cave/Hidden Cave.unity
     guid: a74f1faf79c174f408f2961d90b65679
+  - enabled: 1
+    path: Assets/Scenes/Towns/Meadowvale/Houses/MeadowvaleInn.unity
+    guid: 07840cc4b2ba5694c8bd0a1b55993650
   m_configObjects: {}
