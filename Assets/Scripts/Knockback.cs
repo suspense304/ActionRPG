@@ -35,12 +35,18 @@ public class Knockback : MonoBehaviour
                 {
                     if(other.GetComponent<PlayerMovement>().currentState != PlayerState.stagger)
                     {
-                        damage = GetComponent<Enemy>().baseAttack;
+                        if(GetComponent<Projectile>() != null)
+                        {
+                            damage = GetComponent<Projectile>().projectileDamage;
+                        } else
+                        {
+                            damage = GetComponent<Enemy>().baseAttack;
+                        }                        
                         hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
                         other.GetComponent<PlayerMovement>().Knockback(knockbackDuration, damage);
                     }
-                    
                 }
+                
             }
         }
     }

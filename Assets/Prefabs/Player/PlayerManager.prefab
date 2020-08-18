@@ -46,16 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 1
-  currentMana: 20
+  currentMana: 10
   currentHealth: 10
   level: 1
-  maxMana: 20
+  maxMana: 10
   maxHealth: 10
   xp: 0
   xpToNextLevel: 12
   healthModifier: 1.02
   xpModifier: 1.06
-  player: {fileID: 2970371497761874265, guid: 10fe2e4cbfbd1d546aa2017f398af802, type: 3}
+  player: {fileID: 0}
   playerHealthSignal: {fileID: 11400000, guid: f109d2d13440ef5448b524a62ed008b9, type: 2}
   playerManaSignal: {fileID: 11400000, guid: f52556d8fd488c84a9e70b8544d3e15e, type: 2}
 --- !u!114 &5448063147193920892

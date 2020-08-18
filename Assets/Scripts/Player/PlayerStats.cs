@@ -49,8 +49,6 @@ public class PlayerStats : MonoBehaviour
         {
             playerManaSignal.Raise();
         }
-        
-        
     }
 
     public void SetMaxHealth(int newHealth)

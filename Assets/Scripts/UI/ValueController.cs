@@ -8,12 +8,13 @@ using UnityEngine.UI;
 public class ValueController : MonoBehaviour
 {
 
-    [SerializeField] Text valueText;
-    [SerializeField] Slider valueSlider;
-    [SerializeField] Image valueBar;
-    [SerializeField] Color low;
-    [SerializeField] Color mid;
-    [SerializeField] Color high;
+
+    public Text valueText;
+    public Slider valueSlider;
+    public Image valueBar;
+    public Color low;
+    public Color mid;
+    public Color high;
 
     public PlayerStats player;
     public void UpdateHealth()

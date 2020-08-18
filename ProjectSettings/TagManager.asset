@@ -8,6 +8,8 @@ TagManager:
   - Breakable
   - Enemy
   - Manager
+  - Projectile
+  - Enemy Projectile
   layers:
   - Default
   - TransparentFX
@@ -21,11 +23,11 @@ TagManager:
   - PlayerWeapon
   - Breakables
   - Shader
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyProjectiles
+  - Projectiles
+  - DefaultTiles
+  - ColliderTiles
+  - Player
   - 
   - 
   - 

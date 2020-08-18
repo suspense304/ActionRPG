@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Chest : Interactable
 {
     public bool isOpen;
+    public BoolValue storedState;
     public Inventory playerInventory;
     public Item contents;
     public SignalSender raiseItem;
@@ -16,6 +17,8 @@ public class Chest : Interactable
     void Start()
     {
         anim = GetComponent<Animator>();
+        isOpen = storedState.RunTimeValue;
+        if (isOpen) anim.SetBool("isOpen", true);
     }
     void Update()
     {
@@ -59,7 +62,9 @@ public class Chest : Interactable
         raiseItem.Raise();
         context.Raise();
         isOpen = true;
+        storedState.RunTimeValue = true;
         anim.SetBool("isOpen", true);
+
     }
 
     public void ChestEmpty()

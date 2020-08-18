@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7947633495421073454}
   - component: {fileID: 2123791207378590055}
   - component: {fileID: -3061859977361768552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Goblin Linear
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -256,3 +256,5 @@ MonoBehaviour:
   chaseRadius: 4
   attackRadius: 0.5
   enemyInstance: {fileID: 7947633495421073458}
+  homePosition: {x: 0, y: 0, z: 0}
+  boundary: 0

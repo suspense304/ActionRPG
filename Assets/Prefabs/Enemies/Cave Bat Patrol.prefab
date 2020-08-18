@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8384721389058525157}
   - component: {fileID: 9078318186568777700}
   - component: {fileID: 7093995723756193317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cave Bat Patrol
   m_TagString: Enemy
   m_Icon: {fileID: 0}

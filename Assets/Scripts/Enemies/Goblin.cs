@@ -22,6 +22,9 @@ public class Goblin : Enemy
             case ChasingMethod.Patrolling:
                 GetComponent<Patrol>().CheckDistance();
                 break;
+            case ChasingMethod.Shooter:
+                GetComponent<RangedAttacker>().CheckDistance();
+                break;
 
         }
     }

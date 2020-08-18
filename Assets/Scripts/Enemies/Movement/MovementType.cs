@@ -7,6 +7,7 @@ public enum ChasingMethod
 { 
     Linear,
     Patrolling,
+    Shooter,
     Orbiting,
     Stationery
 }

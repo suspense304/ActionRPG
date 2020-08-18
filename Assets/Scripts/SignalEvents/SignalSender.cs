@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SignalSender : ScriptableObject
 {
-    public List<SignalListener> listeners = new List<SignalListener>();
+    private readonly List<SignalListener> listeners = new List<SignalListener>();
 
     public void Raise()
     {

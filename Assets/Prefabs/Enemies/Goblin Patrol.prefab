@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 9033190988530635726}
   - component: {fileID: 1039985234681492103}
   - component: {fileID: 793110976098649281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Goblin Patrol
   m_TagString: Enemy
   m_Icon: {fileID: 0}

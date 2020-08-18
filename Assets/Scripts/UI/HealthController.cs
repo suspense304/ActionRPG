@@ -8,12 +8,12 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
 
-    [SerializeField] Text health;
-    [SerializeField] Slider healthSlider;
-    [SerializeField] Image healthBar;
-    [SerializeField] Color low;
-    [SerializeField] Color mid;
-    [SerializeField] Color high;
+    public Text health;
+    public Slider healthSlider;
+    public Image healthBar;
+    public Color low;
+    public Color mid;
+    public Color high;
 
     public PlayerStats player;
     public void UpdateHealth()
