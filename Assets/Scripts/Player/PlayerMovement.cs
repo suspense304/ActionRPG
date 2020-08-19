@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
+        player = GameObject.FindWithTag("Manager").GetComponent<PlayerStats>();
         currentState = PlayerState.walk;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -196,7 +197,6 @@ public class PlayerMovement : MonoBehaviour
             }
         } else
         {
-            Debug.Log("NO MANA");
         }
 
         

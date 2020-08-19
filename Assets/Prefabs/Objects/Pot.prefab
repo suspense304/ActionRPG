@@ -142,3 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eded033e61e46147a304131e144bf12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
+  clip: {fileID: 8300000, guid: d7c5e82550a78a948b624a9cb22ae585, type: 3}
+  breakableLoot: {fileID: 11400000, guid: c037ec3e26191a941bf6617b3f017eef, type: 2}

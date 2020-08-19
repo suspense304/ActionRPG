@@ -31,7 +31,6 @@ public class ValueController : MonoBehaviour
 
     public void UpdateMana()
     {
-        Debug.Log("Updating Mana Values");
         if (player.CurrentMana >= 0)
         {
             

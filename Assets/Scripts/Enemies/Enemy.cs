@@ -32,6 +32,9 @@ public class Enemy : MonoBehaviour
 
     public EnemyState currentState;
 
+    [Header("Loot Table")]
+    public LootTable enemyLoot;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -62,11 +65,24 @@ public class Enemy : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    void MakeLoot()
+    {
+        if(enemyLoot != null)
+        {
+            GameObject current = enemyLoot.LootItem();
+            if(current != null)
+            {
+                Instantiate(current, transform.position, Quaternion.identity);
+            }
+        }
+    }
+
     void DeathEffect()
     {
         if(deathEffect != null)
         {
             GameObject go = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            MakeLoot();
             Destroy(go, 1f);
         }
     }

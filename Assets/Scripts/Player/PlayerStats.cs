@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] int attack;
     [SerializeField] int currentMana;
     [SerializeField] int currentHealth;
+    [SerializeField] int gold;
     [SerializeField] int level;
     [SerializeField] int maxMana;
     [SerializeField] int maxHealth;
@@ -22,11 +23,11 @@ public class PlayerStats : MonoBehaviour
 
     [Header("References")]
     [SerializeField] public GameObject player;
+    [SerializeField] public SignalSender playerGoldSignal;
     [SerializeField] public SignalSender playerHealthSignal;
     [SerializeField] public SignalSender playerManaSignal;
 
     private int baseXp = 40;
-
     public int MaxHealth { get => maxHealth; }
     public int Attack { get => attack; }
     public int Level { get => level; }
@@ -35,8 +36,19 @@ public class PlayerStats : MonoBehaviour
     public int CurrentHealth { get => currentHealth; }
     public int CurrentMana { get => currentMana; }
     public int MaxMana { get => maxMana; }
+    public int Gold { get => gold; }
 
-    
+
+    void Awake()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Manager");
+        
+        if(players.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     {
@@ -49,6 +61,15 @@ public class PlayerStats : MonoBehaviour
         {
             playerManaSignal.Raise();
         }
+
+        UpdateStats();
+    }
+
+    public void UpdateStats()
+    {
+        playerHealthSignal.Raise();
+        playerManaSignal.Raise();
+        playerGoldSignal.Raise();
     }
 
     public void SetMaxHealth(int newHealth)
@@ -56,9 +77,22 @@ public class PlayerStats : MonoBehaviour
         maxHealth = newHealth;
     }
 
+    public void IncreaseHealth(int addedHealth)
+    {
+        currentHealth += addedHealth;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        playerHealthSignal.Raise();
+    }
+
     public void SetAttack(int newAttack)
     {
         attack = newAttack;
+    }
+
+    public void ChangeGold(int amount)
+    {
+        gold += amount;
+        playerGoldSignal.Raise();
     }
 
     public void UseAbilityPower(int abilityPoints)
@@ -81,7 +115,7 @@ public class PlayerStats : MonoBehaviour
         SetAttack(attack + 1);
         SetNextLevelXP();
         xp = 0;
-        playerHealthSignal.Raise();
+        UpdateStats();
     }
 
     public void AddXP(int xpGained)

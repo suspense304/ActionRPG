@@ -16,6 +16,11 @@ public class ManaController : MonoBehaviour
 
     public PlayerStats player;
 
+    void Start()
+    {
+        player = GameObject.FindWithTag("Manager").GetComponent<PlayerStats>();
+        player.playerManaSignal.Raise();
+    }
     public void UpdateMana()
     {
         if (player.CurrentMana >= 0)

@@ -182,6 +182,7 @@ MonoBehaviour:
   rb: {fileID: 9033190988530635725}
   player: {fileID: 0}
   currentState: 0
+  enemyLoot: {fileID: 11400000, guid: 5958ae5e0f852424eb0433ae8b0c2ec5, type: 2}
   currentMethod: 1
 --- !u!61 &9033190988530635727
 BoxCollider2D:

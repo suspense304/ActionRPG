@@ -10,16 +10,16 @@ public class SceneTransition : MonoBehaviour
     public string sceneToLoad;
     public Vector2 playerPosition;
     public VectorValue playerStorage;
-    
 
     void Awake()
     {
-        if(fadePanel != null)
+        if (fadePanel != null)
         {
             GameObject go = Instantiate(fadePanel, Vector3.zero, Quaternion.identity) as GameObject;
             Destroy(go, 1);
         }
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player") && !other.isTrigger)

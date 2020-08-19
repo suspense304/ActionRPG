@@ -135,6 +135,7 @@ MonoBehaviour:
   rb: {fileID: 882575604}
   player: {fileID: 0}
   currentState: 0
+  enemyLoot: {fileID: 11400000, guid: c037ec3e26191a941bf6617b3f017eef, type: 2}
   currentMethod: 1
 --- !u!114 &6810719815475719042
 MonoBehaviour:

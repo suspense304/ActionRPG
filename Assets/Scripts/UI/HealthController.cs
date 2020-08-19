@@ -16,30 +16,45 @@ public class HealthController : MonoBehaviour
     public Color high;
 
     public PlayerStats player;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Manager").GetComponent<PlayerStats>();
+        player.playerHealthSignal.Raise();
+    }
     public void UpdateHealth()
     {
-        if(player.CurrentHealth >= 0)
+        if(player != null)
         {
-            healthSlider.maxValue = player.MaxHealth;
-            healthSlider.value = player.CurrentHealth;
-            health.text = player.CurrentHealth + " / " + player.MaxHealth;
+            if (player.CurrentHealth >= 0)
+            {
+                healthSlider.maxValue = player.MaxHealth;
+                healthSlider.value = player.CurrentHealth;
+                health.text = player.CurrentHealth + " / " + player.MaxHealth;
+            }
+
+            UpdateColorBar(player.CurrentHealth, player.MaxHealth);
         }
         
-        UpdateColorBar(player.CurrentHealth, player.MaxHealth);
     }
     void UpdateColorBar(int currentHealth, int maxHealth)
     {
-        float currentPercent = ((float)currentHealth / (float)maxHealth) * 100;
+        if (player != null)
+        {
+            float currentPercent = ((float)currentHealth / (float)maxHealth) * 100;
 
-        if (currentPercent >= 75)
-        {
-            healthBar.color = high;
-        } else if(currentPercent < 75 && currentPercent >= 25)
-        {
-            healthBar.color = mid;
-        } else
-        {
-            healthBar.color = low;
+            if (currentPercent >= 75)
+            {
+                healthBar.color = high;
+            }
+            else if (currentPercent < 75 && currentPercent >= 25)
+            {
+                healthBar.color = mid;
+            }
+            else
+            {
+                healthBar.color = low;
+            }
         }
     }
 }
